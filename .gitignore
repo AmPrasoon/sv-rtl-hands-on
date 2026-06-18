@@ -48,3 +48,22 @@ Thumbs.db
 __pycache__/
 *.pyc
 .venv/
+
+# Python Virtual Environment
+.venv/
+venv/
+
+# Python caching and compiled bytecode
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Cocotb simulation builds and outputs
+sim_build/
+results.xml
+*.log
+
+# Waveform dumps (Verilator, Icarus, etc.)
+*.vcd
+*.fst
