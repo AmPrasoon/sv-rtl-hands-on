@@ -1,27 +1,38 @@
-# RTL Interview Prep FPGA
+# FPGA RTL Lab
 
-Hands-on SystemVerilog RTL design preparation focused on FPGA/RTL engineering interviews.
+This repository contains small, self-contained SystemVerilog RTL design exercises focused on FPGA-based streaming datapaths, buffering, clock-domain crossing, verification, and implementation analysis.
 
 ## Motivation
 
-This repository contains small, self-contained RTL design exercises for practicing:
+The goal of this repository is to maintain a clean collection of practical RTL design examples that can be simulated, reviewed, extended, and eventually mapped to FPGA hardware.
 
-- SystemVerilog RTL coding
-- AXI4-Stream valid/ready handshakes
-- FIFO design
-- clock-domain crossing
-- streaming image-processing pipelines
+The examples are intentionally compact and modular. Each exercise focuses on a specific hardware-design concept such as valid/ready handshaking, FIFO control, clock-domain crossing, streaming computation, timing constraints, or on-chip debug.
+
+I am also using this repository to gradually become more comfortable with modern open-source RTL verification flows such as cocotb and Verilator. Since these tools have their own learning curve, the plan is to start with simple testbenches and then slowly extend the examples with Python-based verification, randomized testing, and automated checks.
+
+## Topics
+
+- SystemVerilog RTL design
+- AXI4-Stream-style valid/ready interfaces
+- Synchronous FIFO design
+- Asynchronous FIFO and CDC handling
+- Streaming image-processing datapaths
+- Backpressure-aware pipeline control
+- Testbench-based functional verification
+- cocotb-based Python verification experiments
+- Verilator-based simulation experiments
 - Vivado constraints and timing analysis
 - FPGA debug using ZCU104
 
-## Weekly Plan
+## Project Structure
 
-| Week | Topic | Main Deliverable |
+| Folder | Topic | Description |
 |---|---|---|
-| Week 1 | AXI4-Stream synchronous FIFO | Parameterized FIFO + SystemVerilog testbench |
-| Week 2 | Asynchronous FIFO and CDC | Gray-code pointer FIFO + CDC checks |
-| Week 3 | Streaming image filter | 1D/2D filter pipeline with backpressure |
-| Week 4 | Vivado/ZCU104 implementation | Constraints, timing reports, ILA debug |
+| `week1_axis_sync_fifo/` | AXI-style synchronous FIFO | Parameterized FIFO with valid/ready handshake and basic verification |
+| `week2_async_fifo_cdc/` | Asynchronous FIFO and CDC | Gray-coded pointer FIFO and synchronizer-based CDC handling |
+| `week3_streaming_image_filter/` | Streaming image filter | Pipelined pixel-processing datapath with backpressure support |
+| `week4_vivado_zcu104/` | FPGA implementation | Vivado constraints, timing analysis, CDC checks, and ZCU104 debug |
+| `experiments_cocotb_verilator/` | Open-source verification experiments | Small experiments using cocotb and Verilator as I build familiarity with these flows |
 
 ## Tools
 
@@ -29,8 +40,13 @@ This repository contains small, self-contained RTL design exercises for practici
 - QuestaSim / ModelSim
 - Vivado
 - ZCU104 FPGA board
+- cocotb
+- Verilator
+- Python
 - Ubuntu / WSL development environment
 
 ## Repository Policy
 
-This repository contains only self-written interview-preparation examples. It does not contain confidential research, employer, or laboratory code.
+This repository contains only self-written educational and experimental RTL examples. It does not contain confidential research, employer, laboratory, or third-party proprietary code.
+
+Generated tool outputs, simulation databases, bitstreams, and large implementation artifacts are intentionally excluded from version control.
