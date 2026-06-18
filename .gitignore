@@ -1,0 +1,50 @@
+# Simulation outputs
+work/
+transcript
+*.wlf
+*.vcd
+*.fst
+*.ghw
+*.log
+*.jou
+*.str
+
+# Questa/ModelSim
+modelsim.ini
+vsim_stacktrace.vstf
+
+# Vivado generated files
+*.bit
+*.bin
+*.ltx
+*.dcp
+*.rpt
+*.pb
+*.xpr
+.cache/
+.hw/
+.ip_user_files/
+.runs/
+.sim/
+.srcs/
+.gen/
+.Xil/
+
+# Build/output folders
+build/
+out/
+output/
+reports/
+
+# Editor/OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
