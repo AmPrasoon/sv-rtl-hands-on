@@ -7,7 +7,7 @@ from cocotb.triggers import RisingEdge, FallingEdge, ReadOnly
 async def counter_basic_test(dut):
     """Basic reset and enable test for a simple counter."""
 
-    cocotb.start_soon(Clock(dut.clk, 10, units="ns").start())
+    cocotb.start_soon(Clock(dut.clk, 10, unit="ns").start())
 
     # Initial values
     dut.rst_n.value = 0
